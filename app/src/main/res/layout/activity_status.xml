@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.mambobryan.quizie.StatusActivity">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeader"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:mwhCloseColor="@color/colorPrimary"
+        app:mwhStartColor="@color/colorAccentGradientStart" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:text="Adventurer"
+            android:id="@+id/titleEditTextStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="34sp" />
+
+        <TextView
+            android:text="score : o"
+            android:layout_centerVertical="true"
+            android:id="@+id/scoreEditTect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="28sp" />
+        <TextView
+            android:text="level : Zero"
+            android:layout_below="@id/titleEditTextStatus"
+           android:id="@+id/levelEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="28sp" />
+
+        <Button
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/custom_back_accent"
+            android:onClick="playGame"
+            android:text="play"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:layout_marginLeft="16dp"
+            android:onClick="seeScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/custom_back_accent"
+            android:text="score"
+            android:textColor="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/waveHeaderBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleY="-1"
+        app:mwhCloseColor="@color/colorPrimary"
+        app:mwhStartColor="@color/colorAccentGradientStart" />
+
+</LinearLayout>

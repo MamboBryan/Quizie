@@ -380,6 +380,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/questionSevenGroup"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
@@ -458,6 +459,7 @@
                         android:layout_height="wrap_content">
 
                         <RadioGroup
+                            android:orientation="horizontal"
                             android:id="@+id/questionEightGroup"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">

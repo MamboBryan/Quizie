@@ -12,107 +12,113 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int playerScore = 0;
+    int playerScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toast.makeText(this, "If you don't press any button it'll cost you", Toast.LENGTH_LONG).show();
     }
 
-    public void processScore(View view){
+    public void processScore(View view) {
+
+        playerScore = 0;
 
         RadioButton radioOneCorrect = findViewById(R.id.oneCorrect);
         boolean oneIsCorrect = radioOneCorrect.isChecked();
-        if(oneIsCorrect){
+        if (oneIsCorrect) {
             playerScore += 5;
-        }else {
+        } else {
             playerScore -= 5;
         }
 
         RadioButton radioTwoCorrect = findViewById(R.id.twoCorrect);
         boolean twoIsCorrect = radioTwoCorrect.isChecked();
-        if(twoIsCorrect){
+        if (twoIsCorrect) {
             playerScore += 5;
-        }else {
+        } else {
             playerScore -= 5;
         }
 
         RadioButton radioThreeCorrect = findViewById(R.id.threeCorrect);
         boolean threeIsCorrect = radioThreeCorrect.isChecked();
-        if(threeIsCorrect){
+        if (threeIsCorrect) {
             playerScore += 5;
-        }else {
+        } else {
             playerScore -= 5;
         }
 
         RadioButton radioFourCorrect = findViewById(R.id.fourCorrect);
         boolean fourIsCorrect = radioFourCorrect.isChecked();
-        if(fourIsCorrect){
+        if (fourIsCorrect) {
             playerScore += 5;
-        }else {
+        } else {
             playerScore -= 5;
         }
 
         RadioButton radioFiveCorrect = findViewById(R.id.fiveCorrect);
         boolean fiveIsCorrect = radioFiveCorrect.isChecked();
-        if(fiveIsCorrect){
+        if (fiveIsCorrect) {
             playerScore += 5;
-        }else {
+        } else {
             playerScore -= 5;
         }
 
         RadioButton radioSixCorrect = findViewById(R.id.sixCorrect);
         boolean sixIsCorrect = radioSixCorrect.isChecked();
-        if(sixIsCorrect){
+        if (sixIsCorrect) {
             playerScore += 5;
-        }else {
+        } else {
             playerScore -= 5;
         }
 
         RadioButton radioSevenCorrect = findViewById(R.id.sevenCorrect);
         boolean sevenIsCorrect = radioSevenCorrect.isChecked();
-        if(sevenIsCorrect){
+        if (sevenIsCorrect) {
             playerScore += 10;
-        }else {
+        } else {
             playerScore -= 10;
         }
 
         RadioButton radioEightCorrect = findViewById(R.id.eightCorrect);
         boolean eightIsCorrect = radioEightCorrect.isChecked();
-        if(eightIsCorrect){
+        if (eightIsCorrect) {
             playerScore += 10;
-        }else {
+        } else {
             playerScore -= 10;
         }
 
         EditText numberNineText = findViewById(R.id.nineAnswer);
-        int userAnswerNumberNine =Integer.parseInt(numberNineText.getText().toString());
-        if (userAnswerNumberNine == 1){
+        int userAnswerNumberNine = Integer.parseInt(numberNineText.getText().toString());
+        if (userAnswerNumberNine == 1) {
             playerScore += 10;
             Toast.makeText(this, "Que 9 Passed", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             playerScore -= 10;
             Toast.makeText(this, "Que 9 Failed", Toast.LENGTH_SHORT).show();
         }
 
+
         EditText numberTenText = findViewById(R.id.tenAnswer);
-        int userAnswerNumberTen =Integer.parseInt(numberTenText.getText().toString());
-        if (userAnswerNumberTen == 1){
+        int userAnswerNumberTen = Integer.parseInt(numberTenText.getText().toString());
+        if (userAnswerNumberTen == 5) {
             playerScore += 20;
             Toast.makeText(this, "Que 10 Passed", Toast.LENGTH_SHORT).show();
-        }else{
+        } else {
             playerScore -= 20;
             Toast.makeText(this, "Que 10 Failed", Toast.LENGTH_SHORT).show();
         }
 
-
         String totalScore = Integer.toString(playerScore);
-        Toast.makeText(this, totalScore, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Total Score" + totalScore, Toast.LENGTH_SHORT).show();
+
+        Intent activity = new Intent(MainActivity.this, StatusActivity.class);
+        activity.putExtra("score", String.valueOf(playerScore));
+        startActivity(activity);
 
     }
-
 
 
 }
